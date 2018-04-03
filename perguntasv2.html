@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!--<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+	<div class="fundo"></div>
+    <div id="tela">
+        <div id="formulario">
+            <!-- <script>
+                $("input[name='selecionar']").change(function () {
+                    next();
+                });
+            </script> -->
+        </div>
+        <div id="botoes">
+            <button id="A" onClick="responderPergunta(this.id, $('.pergunta').prop('id'))">
+                <!--<i class="material-icons">mood_bad</i>-->
+                <i class="material-icons">sentiment_very_dissatisfied</i>
+            </button>
+            <button id="B" onClick="responderPergunta(this.id, $('.pergunta').prop('id'))">
+                <!--<i class="far fa-frown"></i>-->
+                <i class="material-icons">sentiment_dissatisfied</i>
+            </button>
+            <button id="C" onClick="responderPergunta(this.id, $('.pergunta').prop('id'))">
+                <!--<i class="far fa-meh"></i>-->
+                <i class="material-icons">sentiment_neutral</i>
+            </button>
+            <button id="D" onClick="responderPergunta(this.id, $('.pergunta').prop('id'))">
+                <!--<i class="far fa-smile"></i>-->
+                <i class="material-icons">sentiment_satisfied</i>
+            </button>
+            <button id="E" onClick="responderPergunta(this.id, $('.pergunta').prop('id'))">
+                <!--<i class="material-icons">mood</i>-->
+                <i class="material-icons">sentiment_very_satisfied</i>
+            </button>
+
+            <!-- <button id="btnProx" onclick='next()'>Próxima</button> -->
+        </div>
+    </div>
+
+    <script>
+
+        function responderPergunta(resposta, pergunta) {
+            console.log('{"resposta" : "' + resposta + '", "id_pergunta" : ' + pergunta + '}');
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://renatafelix-001-site1.gtempurl.com/api/Respostas',
+                contentType: 'application/json; charset=utf-8',
+                data: '{"resposta" : "' + resposta + '", "id_pergunta" : ' + pergunta + '}',
+                success: function () {
+                    // alert("Sucesso.");
+                    next();
+                },
+                error: function () {
+                    // alert("Error.");
+                    next();
+                }
+            });
+        }
+
+        var perg, index;
+        index = 0;
+
+        $.ajax({
+            type: 'GET',
+            url: 'http://renatafelix-001-site1.gtempurl.com/api/Perguntas',
+            dataType: 'json',
+            success: function (data) {
+
+                perg = data;
+                $("#formulario").append("<div class = 'pergunta' id=" + perg[index].id + ">" + perg[index].id + '. ' + perg[index].descricao + "</div>");
+                
+            },
+            error: function () {
+                alert("Error");
+            }
+
+        });
+
+        function next() {
+            setTimeout(function () { $("input[name='perguntas']").prop("checked", false); }, 300);
+            index++;
+
+            if (!(index == perg.length)) {
+                proximaPergunta();
+            } else {
+                setTimeout(function () {
+                    $("input[name='perguntas']").prop("checked", false),
+                        alert("Agradecemos sua participação!"), index = 0, proximaPergunta();
+                }, 200);
+
+            }
+
+            console.log("index: " + index + "array: " + perg.length);
+        }
+
+        function proximaPergunta() {
+            $("#formulario").empty();
+            $("#formulario").append("<div class = 'pergunta' id=" + perg[index].id + ">" + perg[index].id + '. ' + perg[index].descricao + "</div>");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+body{
+    /*background: rgb(114, 56, 140);*/
+    background: rgb(255, 255, 255);
+    font-family: 'Raleway', sans-serif;
+    font-size: 400%;
+    /*color: rgb(255, 255, 255);*/
+    /*color: rgb(114, 56, 140);*/
+    color: rgb(0,0,0);
+	margin: 0;
+}
+.fundo{
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	position: absolute;
+}
+.fundo::after{
+	background-image: url(sesi.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+	opacity: 0.3;
+	content: "";
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1; 
+}
+/*#btnProx{
+    margin-top: 30%;
+    margin-left: 85%;
+    width: 140px;
+    height: 70px;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    /*color: rgb(255, 255, 255);
+    color: rgb(114, 56, 140);
+    font-weight: bold;
+}*/
+
+
+
+#A {
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    /*color: rgb(100, 036,036);*/
+    /*background-color: rgb(100, 036,036);*/
+	background-color: rgb(255,69,0);
+    /*background-color: transparent;*/
+    /*border: none;*/
+    border-radius: 80px;
+	border: 1px;
+	margin: 15px;
+	margin-top: 10%;
+}
+
+#B{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    /*color: rgb(179, 040, 033);*/
+    /*background-color: rgb(179, 040, 033);*/
+	background-color: rgb(255,165,0);
+    /*background-color: transparent;*/
+    /*border: none;*/
+    border-radius: 80px;
+	border: 1px;
+	margin: 15px;
+	margin-top: 10%;
+}
+
+#C{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    /*color: rgb(229, 190, 001);*/
+    /*background-color: rgb(229, 190, 001);*/
+	background-color: rgb(255,215,0);
+    /*background-color: transparent;*/
+    /*border: none;*/
+    border-radius: 80px;
+	border: 1px;
+	margin: 15px;
+	margin-top: 10%;
+}
+
+#D{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    /*color: rgb(087, 166, 057);*/
+    /*background-color: rgb(087, 166, 057);*/
+	background-color: rgb(0, 128, 0);
+    /*background-color: transparent;*/
+    /*border: none;*/
+    border-radius: 80px;
+	border: 1px;
+	margin: 15px;
+	margin-top: 10%;
+}
+
+#E{
+    width: 150px;
+    height: 150px;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(255, 255, 255);
+    /*color: rgb(0, 87, 0);*/
+    /*background-color: rgb(0, 87, 0);*/
+	background-color: rgb(0,100,0);
+    /*background-color: transparent;*/
+    /*border: none;*/
+    border-radius: 80px;
+	border: 1px;
+	margin: 15px;
+	margin-top: 10%;
+}
+
+#botoes {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#botoes .material-icons {
+    margin-top: 10%;
+    font-size: 120px;
+}
+
+/* RESPONSIVO */
+
+@media only screen and (min-width: 1280px) {
+    #E {
+      font-size: 120px;  
+    }
+}
