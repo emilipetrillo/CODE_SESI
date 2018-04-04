@@ -8,17 +8,27 @@ body{
     color: rgb(0,0,0);
 	margin: 0;
 }
+
+.pergunta{
+    color:rgb(75,0,130);
+    /*color:rgb(255, 255, 255);*/
+    text-shadow: 4px 4px 6px rgb(255, 255, 255);
+    text-align: center;
+    font-weight: bold;
+    /*padding-top: 60px;
+    padding-left: 60px;*/
+}
+
 .fundo{
 	width: 100vw;
 	height: 100vh;
 	display: block;
 	position: absolute;
-}
-.fundo::after{
-	background-image: url(sesi.jpg);
+    
+    background-image: url(wallpaper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-	opacity: 0.3;
+	opacity: 0.8;
 	content: "";
 	top: 0;
 	left: 0;
@@ -26,19 +36,14 @@ body{
 	right: 0;
 	position: absolute;
 	z-index: -1; 
+    
 }
-/*#btnProx{
-    margin-top: 30%;
-    margin-left: 85%;
-    width: 140px;
-    height: 70px;
-    font-size: 30px;
-    font-family: 'Raleway', sans-serif;
-    /*color: rgb(255, 255, 255);
-    color: rgb(114, 56, 140);
-    font-weight: bold;
-}*/
 
+
+#tela{
+    padding: 80px 100px ;
+    /* em cima, direita, baixo, esquerda*/
+}
 
 
 #A {
@@ -55,7 +60,8 @@ body{
     border-radius: 80px;
 	border: 1px;
 	margin: 15px;
-	margin-top: 10%;
+	margin-top: 18%;
+	box-shadow: 6px 6px 8px rgb(255, 255, 255);
 }
 
 #B{
@@ -72,7 +78,8 @@ body{
     border-radius: 80px;
 	border: 1px;
 	margin: 15px;
-	margin-top: 10%;
+	margin-top: 18%;
+	box-shadow: 6px 6px 8px rgb(255, 255, 255);
 }
 
 #C{
@@ -89,7 +96,8 @@ body{
     border-radius: 80px;
 	border: 1px;
 	margin: 15px;
-	margin-top: 10%;
+	margin-top: 18%;
+	box-shadow: 6px 6px 8px rgb(255, 255, 255);
 }
 
 #D{
@@ -106,7 +114,8 @@ body{
     border-radius: 80px;
 	border: 1px;
 	margin: 15px;
-	margin-top: 10%;
+	margin-top: 18%;
+	box-shadow: 6px 6px 8px rgb(255, 255, 255);
 }
 
 #E{
@@ -115,15 +124,12 @@ body{
     font-size: 80px;
     font-family: 'Raleway', sans-serif;
     color: rgb(255, 255, 255);
-    /*color: rgb(0, 87, 0);*/
-    /*background-color: rgb(0, 87, 0);*/
 	background-color: rgb(0,100,0);
-    /*background-color: transparent;*/
-    /*border: none;*/
     border-radius: 80px;
 	border: 1px;
 	margin: 15px;
-	margin-top: 10%;
+	margin-top: 18%;
+	box-shadow: 6px 6px 8px rgb(255, 255, 255);
 }
 
 #botoes {
@@ -137,10 +143,18 @@ body{
     font-size: 120px;
 }
 
+#A:focus, #B:focus, #C:focus, #D:focus, #E:focus{
+	outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
+
+
+
 /* RESPONSIVO */
 
-@media only screen and (min-width: 1280px) {
+/*@media only screen and (min-width: 1280px) {
     #E {
       font-size: 120px;  
     }
-}
+}*/
