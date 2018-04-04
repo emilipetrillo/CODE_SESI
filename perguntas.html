@@ -55,7 +55,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: 'http://renatafelix-001-site1.gtempurl.com/api/Respostas',
+                url: 'https://renatafelix-001-site1.gtempurl.com/api/Respostas',
                 contentType: 'application/json; charset=utf-8',
                 data: '{"resposta" : "' + resposta + '", "id_pergunta" : ' + pergunta + '}',
                 success: function () {
@@ -74,7 +74,7 @@
 
         $.ajax({
             type: 'GET',
-            url: 'http://renatafelix-001-site1.gtempurl.com/api/Perguntas',
+            url: 'https://renatafelix-001-site1.gtempurl.com/api/Perguntas',
             dataType: 'json',
             success: function (data) {
 
